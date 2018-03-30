@@ -1,0 +1,158 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #F2B68C 0%, #FBF13F 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #366e9b;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    background: #7a5743;
+    cursor: default;
+}
+
+.deck .card.nomatch {
+    background: #FF0031;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #32ae36;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.score-panel .stars {
+    color: orange;
+    margin: 0;
+    padding: 0;
+    margin: 0 10px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+#timer { 
+    margin: 0px 10px;
+ }
+
+.score-panel .moves {
+    margin: 0px 10px 0 5px;
+}
+
+.score-panel .restart {
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+/*
+ * Media Queries
+ */
+
+
+@media screen and (max-width: 450px) {
+    .deck {
+        width: 90%;
+        min-height: 400px;
+    }
+
+    .deck .card {
+        width: 22%;
+        height: 63px;
+        margin: 0 5px 0 0;
+    }
+}
+
+
+@media screen and (min-width : 451px) and (max-width : 700px) {
+    .deck {
+        width: 90%;
+        height: 80vh;
+        min-height: 80vh;
+    }
+
+    .deck .card {
+        width: 20%;
+        height: 20%;
+        margin: 5px;
+    }
+}
