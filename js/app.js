@@ -180,7 +180,7 @@ restart.on('click', function() {
     confirmButtonText: 'Yes, Restart Game!'
   }).then(function(isConfirm) {
     if (isConfirm) {
-      startGame();
+      location.reload();
     }
   })
 });
